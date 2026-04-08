@@ -48,7 +48,61 @@ Add the following config to your mcp.json.
 }
 ```
 
-<!-- TODO: Add Claude Desktop etc. -->
+### Claude Desktop
+
+Add the following to your Claude Desktop configuration file.
+
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "pipe-cd.docs-mcp-server": {
+      "command": "npx",
+      "args": [
+        "@pipe-cd/docs-mcp-server@latest"
+      ]
+    }
+  }
+}
+```
+
+### VS Code
+
+Add the following to your VS Code settings file (`.vscode/settings.json`) or user settings:
+
+```json
+{
+  "mcp": {
+    "servers": {
+      "pipe-cd.docs-mcp-server": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "@pipe-cd/docs-mcp-server@latest"
+        ]
+      }
+    }
+  }
+}
+```
+
+Alternatively, create a `.vscode/mcp.json` file in your project root:
+
+```json
+{
+  "servers": {
+    "pipe-cd.docs-mcp-server": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@pipe-cd/docs-mcp-server@latest"
+      ]
+    }
+  }
+}
+```
 
 ## Tools
 
